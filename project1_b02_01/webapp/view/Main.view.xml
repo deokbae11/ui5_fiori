@@ -1,0 +1,169 @@
+<mvc:View
+    controllerName="project1b0201.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns:m="sap.m"
+	xmlns="sap.ui.table"
+	xmlns:u="sap.ui.unified"
+	xmlns:c="sap.ui.core"
+    height="100%">
+
+    <m:VBox id="aa">
+        <m:Page
+            id="page"
+            title="타이틀"
+        />
+        <m:VBox id="con">
+            <!-- <Button id="btn1" text="MY BUTTON"  press="aa" >  </Button>
+        <Image id="aa" src="C:\Users\soldesk\Pictures\neuer.jpg" ></Image>
+        버튼 띄어쓰기 xx
+        <Button id='btn2' type="Critical" text="내 버튼"></Button> -->
+            <m:Button
+                id="but1"
+                text="MYbutton"
+                press="onclick"
+            />
+			<m:Button
+                id="but2"
+                text="MY_button"
+                press="onclick1"
+            />
+            <m:Text
+                id="string"
+                text="버튼을 누르시오"
+            />
+            <m:Input
+                id="input1"
+                name="name"
+                type="Text"
+                value="누구인가"
+            />
+        </m:VBox>
+		<Table id="_IDGenTable1"
+				rows="{/ProductCollection}"
+				selectionMode="MultiToggle"
+				visibleRowCount="7"
+				paste="onPaste"
+				ariaLabelledBy="title">
+				<extension>
+					<m:OverflowToolbar id="_IDGenOverflowToolbar1" style="Clear">
+						<m:Title id="title" text="Products"/>
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+					<Column id="_IDGenColumn1" width="11rem">
+						<m:Label id="_IDGenLabel1" text="Product Name" />
+						<template>
+							<m:Text id="_IDGenText1" text="{Name}" wrapping="false" />
+						</template>
+					</Column>
+					<!-- <Column id="_IDGenColumn2" width="11rem">
+						<m:Label id="_IDGenLabel11" text="Product Id" />
+						<template>
+							<m:Input id="_IDGenInput1" value="{ProductId}"/>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn3" width="6rem" hAlign="End">
+						<m:Label id="_IDGenLabel12" text="Quantity" />
+						<template>
+							<m:Label id="_IDGenLabel10" text="{Quantity}" />
+						</template>
+					</Column>
+					<Column id="_IDGenColumn13" width="9rem">
+						<m:Label id="_IDGenLabel9" text="Status" />
+						<template>
+							<m:ObjectStatus id="_IDGenObjectStatus1" text="{Status}" state="{
+								path: 'Available',
+								formatter: '.formatAvailableToObjectState'
+							}"/>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn10" width="9rem">
+						<m:Label id="_IDGenLabel8" text="Price" />
+						<template>
+							<u:Currency id="_IDGenCurrency1" value="{Price}" currency="{CurrencyCode}"/>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn9" width="12rem">
+						<m:Label id="_IDGenLabel7" text="Supplier" />
+						<template>
+							<m:ComboBox id="_IDGenComboBox1" value="{SupplierName}" items="{/Suppliers}">
+								<c:Item id="_IDGenItem2" text="{Name}"/>
+							</m:ComboBox>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn8" width="9rem">
+						<m:Label id="_IDGenLabel2" text="Image" />
+						<template>
+							<m:Link id="_IDGenLink1" text="Show Image" href="{ProductPicUrl}" target="_blank"/>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn4" width="9rem">
+						<m:Label id="_IDGenLabel3" text="Details" />
+						<template>
+							<m:Button id="_IDGenButton1" text="Show Details" press="handleDetailsPress"/>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn5" width="7rem">
+						<m:Label id="_IDGenLabel4" text="Heavy Weight" />
+						<template>
+							<m:CheckBox id="_IDGenCheckBox1" selected="{
+								path: 'Heavy',
+								type: 'sap.ui.model.type.String'
+							}"/>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn6" width="12rem">
+						<m:Label id="_IDGenLabel5" text="Main Category" />
+						<template>
+							<m:Select id="_IDGenSelect1" selectedKey="{Category}" items="{/Categories}">
+								<c:Item id="_IDGenItem1" text="{Name}" key="{Name}"/>
+							</m:Select>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn7" width="12rem">
+						<m:Label id="_IDGenLabel6" text="Additional Categories" />
+						<template>
+							<m:MultiInput id="_IDGenMultiInput1"
+								tokenUpdate="updateMultipleSelection"
+								value="{AdditionalCategory}"
+								tokens="{AdditionalCategoriesSelection}"
+								suggestionItems="{
+									path: '/Categories',
+									sorter: { path: 'Name' }
+								}"
+								showValueHelp="false"
+								>
+								<m:tokens>
+									<m:Token id="_IDGenToken1" key="{Key}" text="{Name}"/>
+								</m:tokens>
+								<m:suggestionItems>
+									<c:Item id="_IDGenItem3" key="{ProductId}" text="{Name}" />
+								</m:suggestionItems>
+							</m:MultiInput>
+						</template>
+					</Column>
+					<Column id="_IDGenColumn11" width="6rem" hAlign="Center">
+						<m:Label id="_IDGenLabel14" text="Status" />
+						<template>
+							<c:Icon id="_IDGenIcon1" src="{
+								path: 'Available',
+								formatter: '.formatAvailableToIcon'
+							}"/>
+						</template>
+					</Column> -->
+					<!-- <Column id="_IDGenColumn15" width="11rem" hAlign="Center">
+						<m:Label id="_IDGenLabel16" text="Delivery Date" />
+						<template>
+							<m:DatePicker id="_IDGenDatePicker1" value="{
+								path: 'DeliveryDate',
+								type: 'sap.ui.model.type.Date',
+								formatOptions: {source: {pattern: 'timestamp'}}
+							}"/>
+						</template>
+					</Column> -->
+				</columns>
+			</Table>
+    </m:VBox>
+
+</mvc:View>

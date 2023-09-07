@@ -1,0 +1,82 @@
+<mvc:View xmlns:table="sap.ui.table" controllerName="test.projectb0203.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:t="sap.ui.table">
+    <Page id="page" title="{i18n>title}"><!-- i18n도 바인딩 된 예시 전역모델 전체 페이지에서 접근 가능 -->
+    <!-- main은 지역모델 -->
+        <content>
+        <VBox id="Box1">
+        	<Panel headerText="{main>/list/1/player},{main>/title},{main>/list/1/back_number}" id="Pnl"><!-- 모델 지정 시 {} 하고 key값 넣어 setting list / /-->
+                <FlexBox id="Flbx"
+                    height="100px"
+                    alignItems="Center"
+                    justifyContent="Center">
+                    <Button id="Btn1" text="+" type="Emphasized" class="sapUiSmallMarginEnd" />
+                    <Button id="Btn2" text="-" type="Reject" class="sapUiSmallMarginEnd" />
+                    <Button id="Btn3" text="*" type="Ghost" class="sapUiSmallMarginEnd" />
+                    <Button id="Btn4" text="/" type="Accept" />
+                </FlexBox>
+		    </Panel>
+          
+        <Select id="Selt" width="100%" selectedKey="{/SelectedProduct}">
+                    <items>
+                        <c:Item id='PLUS' key="PLUS" text="+"/>
+                        <c:Item id='MINUS' key="MINUS" text="-"/>
+                        <c:Item id='MULTIPLE' key="MULTIPLE" text="*"/>
+                        <c:Item id='DIVISION' key="DIVISION" text="/"/>
+                    </items>
+                </Select>
+        </VBox>
+        <VBox id="Box2">
+              <Input id="Number1" type="Text" value="1"></Input>
+              <Input id="Number2" type="Text" value="1" change="onChange"></Input>        
+        </VBox>
+        <VBox id="Box3">
+              <Button id="Btn5" press="onClick" text="연산 실행" ></Button>
+              <Text id="String" text="값" ></Text>
+        </VBox>
+        <!-- Aggregation Binding or list binding-->
+        <t:Table
+          rows="{main>/list1}"
+          selectionMode="MultiToggle"
+          visibleRowCount="7"
+          paste="onPaste"
+          ariaLabelledBy="title">
+          <t:extension>
+            <OverflowToolbar style="Clear">
+              <Title id="title" text="Products"/>
+            </OverflowToolbar>
+          </t:extension>
+          <t:columns>
+            <t:Column>
+              <Label text="num1" />
+              <t:template>
+                <Text text="{main>num1}" wrapping="false" />
+              </t:template>
+            </t:Column>
+
+            <t:Column>
+              <Label text="operatorr" />
+              <t:template>
+                <Text text="{main>operator}" wrapping="false" />
+              </t:template>
+            </t:Column>
+             <t:Column>
+              <Label text="num2" />
+              <t:template>
+                <Text text="{main>num2}" wrapping="false" />
+              </t:template>
+            </t:Column>
+            <t:Column>
+              <Label text="result" />
+              <t:template>
+                <Text text="{main>result}" wrapping="false" />
+              </t:template>
+            </t:Column>
+
+          </t:columns>
+        </t:Table>
+        </content>
+    </Page>
+</mvc:View>

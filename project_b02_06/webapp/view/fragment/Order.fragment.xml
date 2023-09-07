@@ -1,0 +1,60 @@
+<c:FragmentDefinition xmlns:table="sap.ui.table" 
+xmlns:c="sap.ui.core"
+xmlns="sap.m"
+xmlns:t="sap.ui.table">
+<Dialog id="idDialog">
+        <content>
+            <table:Table 
+            id="idProductsTable"
+			selectionMode="MultiToggle"
+			rows="{/Orders}" 
+			class="sapFDynamicPageAlignContent"
+			width="auto">
+                <table:columns>
+                    <table:Column >
+                        <Label text="Order"/>
+                        <table:template>
+                            <Text text="{OrderID}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column >
+                        <Label text="Customer ID"/>
+                        <table:template>
+                            <Text text="{CustomerID}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column >
+                        <Label text="EmployeeID"/>
+                        <table:template>
+                            <Text text="{EmployeeID}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <!-- <table:Column >
+                        <Label text="OrderDate"/>
+                        <table:template>
+                            <Text text="{OrderDate}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column >
+                        <Label text="RequiredDate"/>
+                        <table:template>
+                            <Text text="{RequiredDate}" wrapping="false" />
+                        </table:template>
+                    </table:Column>
+                    <table:Column >
+                        <Label text="ShippedDate"/>
+                        <table:template>
+                            <Text text="{ShippedDate}" wrapping="false" />
+                        </table:template>
+                    </table:Column>  -->
+                </table:columns>
+            </table:Table>
+        </content> 
+        <endButton>
+            <Button text="close" press="onClose"/>     
+         </endButton>
+</Dialog>
+
+
+
+</c:FragmentDefinition>
