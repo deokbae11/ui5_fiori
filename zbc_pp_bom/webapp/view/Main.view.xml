@@ -1,0 +1,87 @@
+<mvc:View xmlns:tnt="sap.tnt" xmlns:t="sap.ui.table"   xmlns:cards="sap.f.cards" controllerName="zbcppbom.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:f="sap.f"
+	xmlns:l="sap.ui.layout"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:svm="sap.ui.comp.smartvariants">
+    <Page id="page" title="BOM 조회">	
+       
+        <content>
+         <l:HorizontalLayout >
+            <l:VerticalLayout>
+                <Label text="BOMID"></Label>
+                <ComboBox id = 'combo1' items="{path: '/ZBC_PPT040Set'}" width="300px">
+                <c:Item key="{/ZBC_PPT040Set'}" text="{BomId}"></c:Item>
+                </ComboBox>
+                <Label text="자재코드"></Label>
+				<ComboBox id = 'combo2' items="{path: '/ZBC_PPT040Set'}" width="300px">
+				<c:Item key="{/ZBC_PPT040Set'}" text="{MatCd}"></c:Item>
+				 </ComboBox>
+                <Button text="Search" type="Emphasized" width="300px" press="onSearch"></Button>
+            </l:VerticalLayout>
+				 <Table id="idMemberSet"
+						sticky="HeaderToolbar,ColumnHeaders"
+						inset="false"
+                        visible="true"
+						items="{/ZBC_PPT040Set}"
+						selectionChange="onSelectionchange" 
+						mode="SingleSelectMaster"
+					   class="sapFDynamicPageAlignContent"
+					   width="900px"><!-- items 에 배열까지 바인딩 -->
+                    <headerToolbar>
+                    
+                        <tnt:ToolHeader >
+                            <Title text="Bom 내역"></Title>
+                        </tnt:ToolHeader>
+                    </headerToolbar>
+					<columns>
+						<Column width ="1px">
+							<Text text="BOMID"/>
+						</Column>
+                        <Column width="10px">
+							<Text text="자재코드"/>
+						</Column>
+                        <Column width="10px">
+							<Text text="자재명"/>
+						</Column>
+                        <Column width="10px">
+							<Text text="자재유형"/>
+						</Column>
+                        <Column width="10px">
+							<Text text="자재설명"/>
+						</Column>
+                          <Column width="10px">
+							<Text text="단위"/>
+						</Column>
+						 <Column width="10px">
+							<Text text="생성일자"/>
+						</Column>
+						<Column width="10px">
+							<Text text="유효일자"/>
+						</Column>
+						
+					</columns>
+					<items>
+						<ColumnListItem>
+							<cells>
+								<Text text="{BomId}" />	
+								<Text text="{MatCd}" />
+								<Text text="{MatNm}" />
+								<Text text="{MatType}" />
+								<Text text="{MatDes}" />
+                                <Text text="{Unit}" />
+								<Text text="{path :'BomGDt',
+								formatter : '.formatter.fnDateString'}" />
+								<Text text="{path :'BomEDt',
+								formatter : '.formatter.fnDateString'}" />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+           </l:HorizontalLayout>
+        </content>
+        
+    </Page>
+</mvc:View>

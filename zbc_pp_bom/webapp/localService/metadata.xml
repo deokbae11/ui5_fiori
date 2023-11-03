@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZBC_PPT040_SRV_01" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ZBC_PPT040" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BomId"/>
+                </Key>
+                <Property Name="BomId" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="BOM ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatCd" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="자재코드" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="자재유형" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatNm" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="자재명" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="자재설명" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Unit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="단위" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="BomGDt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="BOM 생성일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BomEDt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="BOM 유효일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="XDel" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="삭제플래그" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreateDt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="생성일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreateTm" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="생성시간" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cuser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="생성작성자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpdateDt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="변경일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpdateTm" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="변경일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uuser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="수정담당자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="ZBC_PPT050Set" Relationship="ZBC_PPT040_SRV_01.headertoitem" FromRole="FromRole_headertoitem" ToRole="ToRole_headertoitem"/>
+            </EntityType>
+            <EntityType Name="ZBC_PPT050" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="BomId"/>
+                    <PropertyRef Name="BomNb"/>
+                </Key>
+                <Property Name="BomId" Type="Edm.String" Nullable="false" MaxLength="9" sap:unicode="false" sap:label="BOM ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="BomNb" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="BOM 품목 노드 번호" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatCd" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="자재코드" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatType" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="자재유형" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatNm" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="자재명" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatDes" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="자재설명" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="MatReq" Type="Edm.Decimal" Nullable="false" Precision="8" Scale="0" sap:unicode="false" sap:unit="Unit" sap:label="수량" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Unit" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="단위" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false" sap:semantics="unit-of-measure"/>
+                <Property Name="MatDys" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="입고소요일수" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="XDel" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="삭제플래그" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreateDt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="생성일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="CreateTm" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="생성시간" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Cuser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="생성작성자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpdateDt" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="변경일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="UpdateTm" Type="Edm.Time" Nullable="false" Precision="0" sap:unicode="false" sap:label="변경일자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Uuser" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="수정담당자" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="headertoitem" sap:content-version="1">
+                <End Type="ZBC_PPT040_SRV_01.ZBC_PPT040" Multiplicity="1" Role="FromRole_headertoitem"/>
+                <End Type="ZBC_PPT040_SRV_01.ZBC_PPT050" Multiplicity="*" Role="ToRole_headertoitem"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_headertoitem">
+                        <PropertyRef Name="BomId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_headertoitem">
+                        <PropertyRef Name="BomId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZBC_PPT040_SRV_01_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ZBC_PPT040Set" EntityType="ZBC_PPT040_SRV_01.ZBC_PPT040" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ZBC_PPT050Set" EntityType="ZBC_PPT040_SRV_01.ZBC_PPT050" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="headertoitemSet" Association="ZBC_PPT040_SRV_01.headertoitem" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="ZBC_PPT040Set" Role="FromRole_headertoitem"/>
+                    <End EntitySet="ZBC_PPT050Set" Role="ToRole_headertoitem"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://sapmento.mento.co.kr:8001/sap/opu/odata/sap/ZBC_PPT040_SRV_01/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://sapmento.mento.co.kr:8001/sap/opu/odata/sap/ZBC_PPT040_SRV_01/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
